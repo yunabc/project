@@ -1,1 +1,1 @@
-console.log('this is orderConfirm')
+import './index.styl';

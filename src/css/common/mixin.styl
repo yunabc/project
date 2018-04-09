@@ -1,13 +1,20 @@
-border-1px($color)
-  position: relative
-  &:after
-    display: block
-    position: absolute
-    left: 0
-    bottom: 0
-    width: 100%
-    border-top: 1px solid $color
-    content: ' '
+border-1px(face,$color)
+  face==top    && (l=left  t=top b=bottom w=width  x=scaleY)
+  face==bottom && (l=left  b=top t=bottom w=width  x=scaleY)
+  face==left   && (l=left  t=top b=right  w=height x=scaleX)
+  face==right  && (l=right t=top b=left   w=height x=scaleX)
+  &.border-1px {
+    position relative
+  }
+  &.border-1px::after {
+    display block
+    position absolute
+    {l} 0
+    {t} 0
+    {w} 100%
+    border-{b} 1px solid $color
+    content ' '
+  }
 
 border-none()
   &:after

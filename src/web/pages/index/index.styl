@@ -1,6 +1,4 @@
-*
-  margin: 0
-  padding: 0
+@import '../../../css/common/index.styl';
 
 body
   // background yellow url('../img/hope.jpg') center no-repeat;
@@ -14,13 +12,15 @@ body
 .testSVG
 	width 100px 
 	height 100px
-	border 1px solid transparent
-	border-image svg(bb param(--color #3399cc)) 2 2 stretch
+	// border 1px solid transparent
+	// border-image svg(bb param(--color #3399cc)) 2 2 stretch
+	border-bottom 1px solid blue
 
 .testVW
   width 100px
   height 100px
-  border: 1px solid red;
+  margin-top 10px
+  border-1px(top,red);
 
 .testAspectRatio
   position relative
