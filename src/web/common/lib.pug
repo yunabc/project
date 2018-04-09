@@ -1,0 +1,10 @@
+//
+   Created by liminshen on 16/4/13.
+- var complie = htmlWebpackPlugin.options.complieConfig
+- var cdn = complie.cdn || 'link'
+- var link = complie.styles || []
+- var map = complie.scripts || []
+each item in link
+    link(rel="stylesheet",href=cdn+item)
+each item in map
+    script(type="text/javascript",src=cdn+item)

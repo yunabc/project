@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    - var titleValue = htmlWebpackPlugin.options.title
+    title=titleValue
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no")
+    meta(name="apple-touch-fullscreen" content="YES")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-touch-fullscreen" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black")
+    link(rel='shortcut icon', type='image/x-icon', href='', media='screen')
+    include ./lib.pug
+  body
+    .container
+      block pageConfig
+      block header
+        include ./header.pug
+      block content
+      block bottom
+        include ./bottom.pug

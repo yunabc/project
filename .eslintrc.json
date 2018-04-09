@@ -1,0 +1,19 @@
+{
+  "env": { "es6": true }, 
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins":[
+    "import",
+    "prettier",
+    "jsx-a11y"
+  ]
+}

@@ -1,0 +1,297 @@
+@charset "utf-8"
+	
+/* 改变动画的效果方式*/
+* 
+	transition-timing-function  ease-in-out
+	
+
+/*html
+	font-size  55.2px !important
+	*/
+/*sprite图片合并*/
+.css_sprite01 
+	background-image url(../../../img/boot/brand4.png)
+	background-repeat  no-repeat
+	background-size  0.4rem 0.34rem
+	
+
+
+.f-ofh 
+	overflow  hidden
+	height  100%!important
+	/*隐藏内容-overflow-hidden*/
+.f-hide 
+	 display  none!important
+	/*隐藏内容*/
+
+.f-tc 
+	 text-align  center
+	
+.f-tr 
+	 text-align  right
+	
+.f-fl 
+	 float  left
+	
+.f-fr 
+	 float  right
+	
+.f-fixed 
+	 position  fixed
+	
+.f-cur 
+	 cursor  pointer
+	
+
+/*bg-background*/
+.s-bg-ddd 
+	 background  #ddd
+	
+html,body,.p-ct,.translate-back,.m-page
+	height  100%
+	
+
+#img1
+	width 100%
+	height  100%
+	background  #ffffff url(../../../img/boot/brand5.png) no-repeat
+	background-size  100% 100%
+	
+#img2
+	width 100%
+	height  100%
+	background  #ffffff url(../../../img/boot/brand2.png) no-repeat
+	background-size  100% 100%
+	
+#img3
+	width 100%
+	height  100%
+	background  #ffffff url(../../../img/boot/brand3.png) no-repeat
+	background-size  100% 100%
+	
+/*文字样式*/
+.brand_txt7
+	color  #444444
+	font-size  0.26rem
+	text-indent  0.52rem
+	line-height  0.4rem
+	
+.brand_txt
+	width  90%
+	margin  2.55rem auto 0
+	background-color  rgba(246, 246, 246, 0.5)
+	padding  0.7rem 0 0.3rem
+	
+.brand_txt p
+	width  90%
+	line-height  0.43rem
+	margin-left  5%
+	margin-bottom  0.3rem
+	
+.brand_txt2
+	padding-top  3.5rem
+	width  86%
+	margin  0 auto
+	
+.brand_txt2 li,.brand_txt8 li
+	height  2.46rem
+	
+.brand_txt5
+	padding-top  2.7rem
+	padding-bottom  1.55rem
+	width  86%
+	margin  0 auto
+	
+.brand_txt6
+	width  86%
+	margin  0 auto
+	
+.brand_icon
+	width  2.15rem
+	height  0.52rem
+	background  url(../../../img/boot/brand8.png) no-repeat
+	background-size  2.15rem 0.52rem
+	margin  0 auto 0.26rem
+	color  #ffffff
+	font-size  0.28rem
+	text-align  center
+	line-height  0.4rem
+	
+.brand_txt8
+	padding-top  1.7rem
+	width  86%
+	margin  0 auto
+	
+/**
+ * 箭头指示元件
+ * -u-arrow
+ */
+.u-arrow 
+	position  fixed
+	bottom  30px
+	left 50%
+	z-index  150
+	width  0.4rem
+	height  0.34rem
+	margin-left  -0.2rem
+	
+.u-arrow p 
+	width  0.4rem
+	height  0.34rem
+	animation  start 1.5s infinite ease-in-out
+	
+
+
+/**
+ * = Layout 布局样式
+ *******************************************************************************************************/
+.p-ct 
+	position  relative
+	width  100%
+	height  100%
+	overflow 5 hidden
+	
+.p-ct.fixed 
+	overflow  hidden
+	
+
+.translate-front 
+	position  fixed
+	top  0
+	left  0
+	z-index  100
+	height  100%
+	width  100%
+	opacity  0
+  transition  opacity 1s
+	
+
+.translate-front .mengban-warn 
+	 position  absolute
+	
+.translate-front.z-show 
+	 opacity  1
+	
+
+.translate-back 
+	position  relative
+	width  100%
+	height  100%
+	
+
+/**
+ * 单页面page模块
+ * -m-page
+ */
+.m-page 
+	position  absolute
+	top 0
+	left  0
+	width 100%
+	z-index  9
+	background  #ddd
+	
+.m-page .page-con 
+	position  relative
+	width  100%
+	height  100%
+	overflow  hidden
+	
+.m-page.active 
+	z-index 40
+	
+.m-page.fixed 
+	position  fixed
+	
+.m-page.move 
+  transition all 0.3s
+	
+	
+
+/*extension*/
+.extension1
+	width 100%
+	height  100%
+	background  #ffffff url(../../../img/extension/extension1.png) no-repeat
+	background-size  100% 10.35rem
+	
+.extension2
+	width 100%
+	height  100%
+	background  #ffffff url(../../../img/extension/extension2.png) no-repeat
+	background-size  100% 10.04rem
+	
+.extension3
+	width 100%
+	height  100%
+	background  #ffffff url(../../../img/extension/extension3.png) no-repeat
+	background-size  100% 4.8rem
+	
+.extension_introduce
+	width  5.56rem
+	height  2.64rem
+	border-radius  0.1rem
+	background-color  #ffffff
+	margin  0 auto
+	box-shadow 0 0.18rem 20px rgba(0, 90, 255, .3)
+	font-size  0.4rem
+	color  #3594ff
+	
+.extension4
+	width  100%
+	height  2.9rem
+	
+.extension_introduce p
+	text-align  center
+	line-height  0.6rem
+	
+.extension_introduce1
+	padding-top  0.2rem
+	
+.extension_img
+	width  100%
+	height  0.16rem
+	background  url(../../../img/extension/extension4.png)
+	background-size  0.3rem 0.16rem
+	margin-top  0.15rem
+	
+.extension_introduce2
+	font-size  0.28rem
+	color  #3594ff
+	text-align  center
+	margin-top  0.46rem
+	
+.extension_download
+	width  5.58rem
+	margin  0 auto
+	margin-top  0.24rem
+	
+.extension_download a
+	width  2.6rem
+	height  1.62rem
+	display  block
+	
+.extension_android
+	background  url(../../../img/extension/extension5.png) no-repeat
+	background-size  2.6rem 1.62rem
+	float  left
+	box-shadow 0 0.18rem 20px rgba(81, 219, 67, .3)
+	
+.extension_ios
+	background  url(../../../img/extension/extension6.png) no-repeat
+	background-size  2.6rem 1.62rem
+	float  right
+	box-shadow 0 0.15rem 20px rgba(0, 90, 255, .3)
+	
+@keyframes  start 
+		0%,30% 
+			opacity  0
+			transform  translate(0,10px)
+
+		60% 
+			opacity  1
+			transform  translate(0,0)
+
+		100% 
+			opacity  0
+			transform  translate(0,-8px)	

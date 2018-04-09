@@ -1,0 +1,31 @@
+{
+  "index":{
+    "title":"index",
+    "cdn":"./static/",
+    "styles":[],
+    "dependencies":["static.js"],
+    "devDependencies":["static.js"]
+  },
+
+  "other":{
+    "title":"other",
+    "cdn":"./static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "brand":{
+    "title":"brand",
+    "cdn":"./static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "orderConfirm":{
+    "title":"orderConfirm",
+    "cdn":"/static/",
+    "styles":[],
+    "dependencies":["static.js"],
+    "devDependencies":["static.js"]
+  }
+}

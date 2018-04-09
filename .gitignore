@@ -1,0 +1,25 @@
+.DS_Store
+node_modules/
+static/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+dist-old
+server-old
+templates/getPrize-old
+templates/register-old
+templates/lotteryNine/app/dist
+templates/lotteryNine/app/log
+templates/lotteryNine/app/dist-old
+update
+
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

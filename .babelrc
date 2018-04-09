@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "ie 9", "safari >= 7"],
+        "ios": "8",
+        "android": "4.4"
+      },
+      "useBuiltIns": true,
+      "include": [],
+      "exclude": []
+    }]
+  ],
+  "plugins":["transform-runtime"]
+}
