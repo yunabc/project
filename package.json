@@ -4,8 +4,8 @@
   "description": "write demo with pug, stylus and ES6",
   "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack  --display-error-details --config build/webpack.dev.conf.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server  --colors --config build/webpack.dev.conf.js",
+    "build": "node build/build.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "test": "jest",
     "test:update": "jest -u"
   },
@@ -19,9 +19,17 @@
   "license": "MIT",
   "author": "Roy Shang",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "copy-webpack-plugin": "^4.5.1",
     "exports-loader": "^0.7.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "lodash": "^4.17.5",
+    "node-notifier": "^5.2.1",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^2.0.0",
+    "shelljs": "^0.8.1",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack-merge": "^4.1.2",
     "zepto": "^1.2.0"
   },
@@ -62,8 +70,12 @@
     "stylus": "~0.54.5",
     "stylus-loader": "~3.0.1",
     "url-loader": "~0.5.9",
-    "webpack": "~2.3.3",
+    "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.8.1",
     "webpack-dev-server": "~2.4.2"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
   }
 }
