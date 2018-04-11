@@ -23,6 +23,7 @@
     "babel-runtime": "^6.26.0",
     "copy-webpack-plugin": "^4.5.1",
     "exports-loader": "^0.7.0",
+    "fastclick": "^1.0.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "lodash": "^4.17.5",
     "node-notifier": "^5.2.1",

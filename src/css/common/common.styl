@@ -1,17 +1,20 @@
 body, html
-  line-height: 1
-  font-weight: 200
-  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif
-
+  line-height 1
+  font-weight 200
+  font-family "microsoft yahei",HelveticaNeue,sans-serif
 .clearfix
-  display: inline-block
+  display inline-block
   &:after
-    display: block
-    content: "."
-    height: 0
-    line-height: 0
-    clear: both
-    visibility: hidden
+    display block
+    content "."
+    height 0
+    line-height 0
+    clear both
+    visibility hidden
+    
+*
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+  -webkit-tap-highlight-color transparent 
 
 @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
   .border-1px
@@ -24,3 +27,5 @@ body, html
     &::after
       -webkit-transform: scaleY(0.5)
       transform: scaleY(0.5)
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  scaleRatio(0.33)

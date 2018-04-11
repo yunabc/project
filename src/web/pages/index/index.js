@@ -1,7 +1,13 @@
 import './index.styl'
 import { isArray } from "lodash"
-
+import $ from 'zepto';
+import FastClick from 'fastclick';
+FastClick.attach(document.body);
 // import '@css/common/common.styl';
+
+$('.btn1').click(function(){
+  alert(1)
+})
 
 function *like() {
   yield 5;
@@ -17,7 +23,6 @@ async function like2 (){
   await 5
   console.log('test2');
 }
-
 let it2 = like2();
 console.log(it2)
 it2.then(res=>{

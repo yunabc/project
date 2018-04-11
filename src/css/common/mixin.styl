@@ -15,7 +15,11 @@ border-1px(face,$color)
     border-{b} 1px solid $color
     content ' '
   }
-
+scaleRatio(ratio)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(ratio)
+      transform: scaleY(ratio)
 border-none()
   &:after
     display: none

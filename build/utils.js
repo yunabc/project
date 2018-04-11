@@ -93,7 +93,7 @@ exports.styleLoaders = function (options) {
   return output
 }
 
-exports.htmls = getFiles('./src/web/pages/**/index.pug');
+exports.htmls = getFiles('./src/web/pages/*/index.pug');
 exports.entrys = getFiles('./src/web/pages/**/index.js');
 
 

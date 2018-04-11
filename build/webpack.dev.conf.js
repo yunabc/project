@@ -7,6 +7,8 @@ const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 const autoprefixer = require('autoprefixer');
 const px2viewport = require('postcss-px-to-viewport');
@@ -20,7 +22,7 @@ const portfinder = require('portfinder')
 
 const compileConfigs = require('../src/web/pages/compile.config.json');
 let htmls = utils.htmls;
-
+console.log(htmls);
 const getHtmlTplDev = ()=>{
   var result = [];
   for(let name in htmls){
@@ -29,6 +31,7 @@ const getHtmlTplDev = ()=>{
       title : compileConfig.title,
       filename: [name]+'.html',
       template: htmls[name],
+      alwaysWriteToDisk: true,
       inject: true,
       chunks : [name],
       complieConfig:{
@@ -69,7 +72,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //     { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
     //   ],
     // },
-    hot: true,
+    historyApiFallback:true,
+    hot: false,
     contentBase: path.resolve(__dirname, '../'),
     // contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
@@ -90,7 +94,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
@@ -108,7 +112,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    // new HtmlWebpackHarddiskPlugin(),
+    //   new BrowserSyncPlugin({
+    //   host: 'localhost',
+    //   port: 3000,
+    //   proxy: 'http://localhost:9988/'
+    // })
+
     
   ]
 })
