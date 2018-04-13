@@ -1,8 +1,10 @@
-// import './css/index.styl'
+import './index.styl'
 import { isArray } from "lodash"
+import _ from "lodash"
+import axios from '@js/axios'
 import $ from 'zepto';
-import FastClick from 'fastclick';
-FastClick.attach(document.body);
+import FastClick from 'fastclick'
+FastClick.attach(document.body)
 // import '@css/common/common.styl';
 
 $('.btn1').click(function(){

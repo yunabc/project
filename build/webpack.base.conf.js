@@ -9,7 +9,7 @@ const writeSvg = require('postcss-write-svg');
 const px2viewport = require('postcss-px-to-viewport');
 const autoprefixer = require('autoprefixer');
 let entrys = utils.entrys;
-console.log(entrys);
+// console.log(entrys);
 Object.keys(entrys).forEach(function (name) {
   entrys[name] = path.join(__dirname,'..',entrys[name]);
 })
@@ -40,6 +40,7 @@ module.exports = {
       // 'vue$': 'vue/dist/vue.esm.js',
       // '@': resolve('src'),
       '@js': resolve('src/js'),
+      '@img': resolve('src/img'),
       '@css': resolve('src/css'),
     }
   },
@@ -65,7 +66,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[ext]')
+          name: utils.assetsPath('img/[name][hash:8].[ext]')
         }
       },
       {

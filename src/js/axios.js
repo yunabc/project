@@ -37,7 +37,7 @@ var instanceB = axios.create({
 var request = {
   getA(opt){
    return instanceA.get('/api/a',opt)
-  }
+  },
   getB(){
     return instanceB.get('/api/b')
   }

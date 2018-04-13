@@ -15,24 +15,32 @@ body
 	border 1px solid transparent
 	border-image svg(bb param(--color #3399cc)) 2 2 stretch
 	// border-bottom 1px solid blue
-
+.container{
+  padding-left 10px
+}
 .testVW
   width 100px
   height 100px
   margin-top 10px
-  border-1px(top,red);
-
-.testAspectRatio
-  position relative
-  aspect-ratio '16:9'
-  &::before
-    content ''
+  //border-1px(right,red);
+  //border-1px(bottom,red);
+  //border-1px(top,red);
+  border-1px(left,red);
 .aaa 
 	width 1100px
 	display flex
 .wrap
-  
   .box
     width 375px
     display inline-block  
     aspect-ratio('20:10')
+.box-wrap
+  font-size 0
+  .boxaaa
+    width 375px
+    height 375px
+    display inline-block
+    background-color red
+    &.boxbbb
+      background-color blue
+      width 374px
