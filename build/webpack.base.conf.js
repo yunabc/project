@@ -140,7 +140,7 @@ module.exports = {
             viewportHeight: 1670,
             unitPrecision: 5,
             viewportUnit: 'vw',
-            selectorBlackList: [],
+            selectorBlackList: [/^body$/],
             minPixelValue: 1,
             mediaQuery: false
           }),

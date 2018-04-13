@@ -1,4 +1,4 @@
-import './index.styl'
+// import './css/index.styl'
 import { isArray } from "lodash"
 import $ from 'zepto';
 import FastClick from 'fastclick';
@@ -8,6 +8,20 @@ FastClick.attach(document.body);
 $('.btn1').click(function(){
   alert(1)
 })
+
+function aaa () {
+  console.log('this is aaa');
+}
+
+function bbb () {
+  console.log('this is bbb');
+  setTimeout(()=>{
+    console.log('this is setTimeout bbb'); 
+  })
+}
+
+aaa(bbb());
+
 
 function *like() {
   yield 5;

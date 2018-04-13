@@ -1,3 +1,4 @@
+/*border 1px*/
 border-1px(face,$color)
   face==top    && (l=left  t=top b=bottom w=width  x=scaleY)
   face==bottom && (l=left  b=top t=bottom w=width  x=scaleY)
@@ -15,16 +16,25 @@ border-1px(face,$color)
     border-{b} 1px solid $color
     content ' '
   }
+/*border none*/
+border-none()
+  &:after
+    display: none
+/*横纵比，需要纵向高度布局时用*/
+aspect-ratio(aaa) 
+  &[aspectratio]
+    aspect-ratio aaa
+    
+
+/*背景图片 根据分辨路加载不同倍图*/
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+    
+/*内部调用 不使用*/
 scaleRatio(ratio)
   .border-1px
     &::after
       -webkit-transform: scaleY(ratio)
       transform: scaleY(ratio)
-border-none()
-  &:after
-    display: none
-
-bg-image($url)
-  background-image: url($url + "@2x.png")
-  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
-    background-image: url($url + "@3x.png")

@@ -2,11 +2,22 @@ extends ../../common/layout
 block header
   .header
 block content
+  img(style="display:none" src=require('../../../img/boot/boot2.png'))
+
   .test-container 测试内容替换112
   .testSVG Hello SVG
   .testVW.border-1px Hello world
   .testAspectRatio Hello Aspect Ratiowwwaaa
   button.btn1 click me
+  ul.wrap
+    li.box(aspectratio) 
+      .box-content(aspectratio-content) 我是content
+    li.box(aspectratio)
+      .box-content(aspectratio-content) 我是content
+    li.box(aspectratio)
+      .box-content(aspectratio-content) 我是content
+    li.box(aspectratio)
+      .box-content(aspectratio-content) 我是content
 block bottom
   p.test 测试23232
 

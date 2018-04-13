@@ -80,6 +80,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
+    disableHostCheck:true,
     overlay: config.dev.errorOverlay
       ? { warnings: false, errors: true }
       : false,
@@ -106,13 +107,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // }),
     ...getHtmlTplDev(),
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.dev.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../dist'),
+    //     to: config.dev.assetsSubDirectory,
+    //     ignore: ['.*']
+    //   }
+    // ]),
     // new HtmlWebpackHarddiskPlugin(),
     //   new BrowserSyncPlugin({
     //   host: 'localhost',

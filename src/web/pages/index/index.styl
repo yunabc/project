@@ -12,9 +12,9 @@ body
 .testSVG
 	width 100px 
 	height 100px
-	// border 1px solid transparent
-	// border-image svg(bb param(--color #3399cc)) 2 2 stretch
-	border-bottom 1px solid blue
+	border 1px solid transparent
+	border-image svg(bb param(--color #3399cc)) 2 2 stretch
+	// border-bottom 1px solid blue
 
 .testVW
   width 100px
@@ -29,4 +29,10 @@ body
     content ''
 .aaa 
 	width 1100px
-	display:flex;
+	display flex
+.wrap
+  
+  .box
+    width 375px
+    display inline-block  
+    aspect-ratio('20:10')
