@@ -1,5 +1,5 @@
 import '@css/common/common.styl';
-import './brand.styl';
+import './css/brand.styl';
 
 import resize from '@js/lib/resize750'
 import $ from 'zepto'
