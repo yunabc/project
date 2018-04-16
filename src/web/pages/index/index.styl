@@ -1,7 +1,9 @@
-@import '../../../css/common/index.styl';
+// @import '../../../css/common/index.styl'
+  
 
 body
-  // background yellow url('../img/hope.jpg') center no-repeat;
+  // background yellow url('../img/hope.jpg') center no-repeat
+  
 
 @svg bb 
 	@rect 
@@ -12,20 +14,22 @@ body
 .testSVG
 	width 100px 
 	height 100px
-	border 1px solid transparent
-	border-image svg(bb param(--color #3399cc)) 2 2 stretch
-	// border-bottom 1px solid blue
-.container{
+	// border 1px solid transparent
+	// border-image svg(bb param(--color #3399cc)) 2 2 stretch
+	border 1px solid #ccc
+.container
   padding-left 10px
-}
+
 .testVW
-  width 100px
-  height 100px
-  margin-top 10px
-  //border-1px(right,red);
-  //border-1px(bottom,red);
-  //border-1px(top,red);
-  border-1px(left,red);
+  width 180px
+  height 60px
+  // margin-top 10px
+  // line-height 20px
+  // text-align center
+  // border-radius 5px
+  background #ccc
+ 
+  
 .aaa 
 	width 1100px
 	display flex

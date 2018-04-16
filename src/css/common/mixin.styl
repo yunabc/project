@@ -1,43 +1,40 @@
 /*border 1px*/
-border-1px(face,$color)
+inner-style(radius,scaleRatio,x) 
+  border-radius radius*scaleRatio*1px
+  transform x+'('+(1/scaleRatio)+')'
+  width 100%*scaleRatio
+  height 100%*scaleRatio   
+border-1px(face,args...)
+  $color=args[0]
+  radius=args[1]||0
   face==top    && (l=left  t=top b=-top w=width  x=scale m=-1)
   face==bottom && (l=left  b=-bottom t=bottom w=width  x=scale m=0)
   face==left   && (l=left  t=top b=-left  w=height x=scale m=-1)
   face==right  && (l=right t=top b=-right   w=height x=scale m=0)
   face==all  && (l=right t=top b=null   w=height x=scale m=-1)
-  &.border-1px 
-    position relative
-    
-  
-  &.border-1px::after 
-    display block
+  position relative
+  &:after 
+    content ''
     position absolute
-    margin-top m
-    margin-left m
-    left 0
     top 0
-    transform-origin 0 0
+    left 0
+    box-sizing border-box
+    transform-origin left top
     border{b} 1px solid $color
-    content ' '
     @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
-      transform: x+'(0.67)'
-      width 150%
-      height 150%
-      margin-top m*0.67px
-      margin-left m*0.67px
+      scaleRatio=1.5
+      inner-style(radius,scaleRatio,x)
     @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
-      transform: x+'(0.5)'
-      width 200%
-      height 200%  
-      margin-top m*0.5px
-      margin-left m*0.5px  
+      scaleRatio=2
+      inner-style(radius,scaleRatio,x) 
+      /*margin-top m*0.5px
+      margin-left m*0.5px*/  
     @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
-      transform: x+'(0.33)'
-      width 300%
-      height 300%
-      margin-top m*0.33px
-      margin-left m*0.33px 
-  
+      scaleRatio=3
+      inner-style(radius,scaleRatio,x)
+      /*margin-top m*0.33px
+      margin-left m*0.33px*/ 
+
 /*border none*/
 border-none()
   &:after
@@ -53,4 +50,4 @@ bg-image($url)
   background-image: url($url + "@2x.png")
   @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
     background-image: url($url + "@3x.png")
-    
+
