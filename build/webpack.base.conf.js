@@ -8,18 +8,18 @@ const aspectRatio = require('postcss-aspect-ratio-mini');
 const writeSvg = require('postcss-write-svg');
 const px2viewport = require('postcss-px-to-viewport');
 const autoprefixer = require('autoprefixer');
-let entrys = utils.entrys;
-// console.log(entrys);
+let entrys = utils.entrys.js;
 Object.keys(entrys).forEach(function (name) {
   entrys[name] = path.join(__dirname,'..',entrys[name]);
 })
-
+// console.log('entrys:')
+// console.log(entrys)
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 
-const env = require('../config/prod.env')
+
 
 module.exports = {
   entry: entrys,
@@ -38,7 +38,7 @@ module.exports = {
 
     alias: {
       // 'vue$': 'vue/dist/vue.esm.js',
-      // '@': resolve('src'),
+      '@': resolve('src'),
       '@js': resolve('src/js'),
       '@img': resolve('src/img'),
       '@css': resolve('src/css'),

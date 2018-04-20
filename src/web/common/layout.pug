@@ -1,8 +1,9 @@
 doctype html
 html(lang="en")
   head
-    - var titleValue = htmlWebpackPlugin.options.title
-    title=titleValue
+    - var title = htmlWebpackPlugin.options.title
+    block title
+      title=title
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no")
     meta(name="apple-touch-fullscreen" content="YES")
@@ -11,13 +12,10 @@ html(lang="en")
     meta(name="apple-touch-fullscreen" content="yes")
     meta(name="apple-mobile-web-app-status-bar-style" content="black")
     link(rel='shortcut icon', type='image/x-icon', href='', media='screen')
-    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-117584194-1")
-    include ./lib.pug
+    //- script(async src="https://www.googletagmanager.com/gtag/js?id=UA-117584194-1")
   body
     .container
       block pageConfig
-        .page
       block header
-        .header 我是header
       block content
       block bottom

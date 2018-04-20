@@ -1,11 +1,22 @@
 import axios from 'axios'
+import qs from 'qs'
+
 
 var domain = {
-  prefixA:'www.aaa.com',
-  prefixB:'www.bbb.com'
+  prefixA:'http://192.168.31.250:8080',
+  // prefixB:'www.bbb.com'
 }
+
+
+var instanceA = axios.create({
+  baseURL: process.env.NODE_ENV === 'production' ? domain.prefixA : '',
+  timeout: 1000,
+  headers: {'X-Custom-Header': 'foobar'}
+});
+
+
 // 添加请求拦截器
-axios.interceptors.request.use(function (config) {
+instanceA.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
   return config;
 }, function (error) {
@@ -14,7 +25,7 @@ axios.interceptors.request.use(function (config) {
 });
 
 // 添加响应拦截器
-axios.interceptors.response.use(function (response) {
+instanceA.interceptors.response.use(function (response) {
   // 对响应数据做点什么
   return response;
 }, function (error) {
@@ -23,25 +34,16 @@ axios.interceptors.response.use(function (response) {
 });
 
 
-var instanceA = axios.create({
-  baseURL: domain.prefixA,
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
-});
-var instanceB = axios.create({
-  baseURL: domain.prefixB,
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
-});
-
 var request = {
   getA(opt){
-   return instanceA.get('/api/a',opt)
+   return instanceA.post('/api/v1/insure/compandprdtypes',opt)
   },
-  getB(){
-    return instanceB.get('/api/b')
+  getB(opt){
+   return instanceA.get('/api/v1/insure/compandprdtypes',opt)
   }
 }
+
+
 export default request;
 
 

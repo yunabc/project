@@ -6,13 +6,34 @@ const packageConfig = require('../package.json')
 // const path = require('path');
 const glob = require('glob');
 function getFiles(sourcePath) {
-  var entrys = {};
+  var entrys = {htmls:{},js:{}};
   var basename;
-  glob.sync(sourcePath).forEach(function (entry) {
-    basename = path.dirname(entry).split('/').pop();
+  glob.sync(sourcePath).forEach(function (filePath) {
+    // console.log('filePath:');
+    // console.log(filePath);
+    basename = filePath.split('/').pop();
+    // console.log('basename:');
+    // console.log(basename);
+    let allfile = glob.sync(filePath+'/*');
+    let len = allfile.length;
+    // console.log('allfile:');
+    // console.log(allfile);
+    allfile.forEach(function(entry,i){
+
+      if(/index\.pug$/.test(entry)){
+
+        entrys.htmls[basename] = entry;
+      };
+      if(/index\.js$/.test(entry)){
+        entrys.js[basename] = entry;
+      }
+      if(i == len - 1 && !entrys.htmls[basename]){
+        entrys.htmls[basename] = null
+      }
+    })
     // basename = path.basename(entry,path.extname(entry));
-    entrys[basename] = entry;
   });
+  // console.log(entrys);
   return entrys;
 }
 exports.assetsPath = function (_path) {
@@ -94,8 +115,8 @@ exports.styleLoaders = function (options) {
   return output
 }
 
-exports.htmls = getFiles('./src/web/pages/*/index.pug');
-exports.entrys = getFiles('./src/web/pages/**/index.js');
+exports.entrys = getFiles('./src/web/pages/*');
+// exports.entrys = getFiles('./src/web/pages/**/index.js');
 
 
 exports.createNotifierCallback = () => {

@@ -12,12 +12,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         //eg
-        // "/v1": {
-        //     target: "http://47.88.57.130",
-        //     pathRewrite: {
-        //       '^/V1': '/V1'
-        //     }
-        // }
+        "/api": {
+            target: "http://192.168.31.250:8080/",
+            pathRewrite: {
+              '^/api': '/api'
+            }
+        }
     },
 
     // Various Dev Server settings

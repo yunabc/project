@@ -8,9 +8,10 @@
   },
 
   "other":{
-    "title":"other",
+    "title":"other123123",
     "cdn":"./static/",
     "styles":[],
+    "chunks":["other","manifest"],
     "dependencies":[],
     "devDependencies":[]
   },
@@ -23,6 +24,34 @@
   },
   "orderConfirm":{
     "title":"orderConfirm",
+    "cdn":"/static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "testWindow":{
+    "title":"testWindow",
+    "cdn":"/static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "request":{
+    "title":"request",
+    "cdn":"/static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "html2json":{
+    "title":"html2json",
+    "cdn":"/static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "list":{
+    "title":"list",
     "cdn":"/static/",
     "styles":[],
     "dependencies":[],

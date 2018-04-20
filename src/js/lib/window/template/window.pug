@@ -1,0 +1,19 @@
+if hasMask
+  .window_mask
+.window_boundingBox
+  .window_header #{title}
+    span.window_closeBtn X
+  .window_body #{content}
+    if winType == 'prompt'
+      p.window_promptInputWrapper
+        input.window_promptInput(type='text')
+  .window_footer
+    if winType == 'alert'
+      button.yesBtn #{text4AlertBtn}
+    else 
+      if winType == 'confirm'
+        button.confirmBtn #{text4ConfirmBtn}
+      else
+        button.promptBtn #{text4PromptBtn}
+      button.cancleBtn #{text4CancleBtn}
+

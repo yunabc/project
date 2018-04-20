@@ -1,0 +1,7 @@
+ul.list
+  each item in data
+    li.company 
+      - var imgSrc = item.img 
+      //- img(src=require(`@/web/pages/list${imgSrc.substr(1)}`))
+      img(src=require(`${imgSrc}`))
+      p #{item.company}

@@ -1,0 +1,134 @@
+{
+  "node": "root",
+  "child": [
+    {
+      "node": "element",
+      "tag": "p",
+      "child": [
+        {
+          "node": "text",
+          "text": "这是一个测试"
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n"
+    },
+    {
+      "node": "element",
+      "tag": "p",
+      "child": [
+        {
+          "node": "text",
+          "text": "测试"
+        },
+        {
+          "node": "element",
+          "tag": "strong",
+          "child": [
+            {
+              "node": "text",
+              "text": "加粗"
+            }
+          ]
+        },
+        {
+          "node": "text",
+          "text": "测试"
+        },
+        {
+          "node": "element",
+          "tag": "strong",
+          "child": [
+            {
+              "node": "text",
+              "text": "加粗"
+            }
+          ]
+        },
+        {
+          "node": "text",
+          "text": "测试"
+        },
+        {
+          "node": "element",
+          "tag": "a",
+          "attr": {
+            "href": [
+              "",
+              ""
+            ],
+            "target": "_blank"
+          },
+          "child": [
+            {
+              "node": "text",
+              "text": "连接"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n"
+    },
+    {
+      "node": "element",
+      "tag": "p",
+      "child": [
+        {
+          "node": "text",
+          "text": "测试 空格"
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n"
+    },
+    {
+      "node": "element",
+      "tag": "p",
+      "child": [
+        {
+          "node": "text",
+          "text": "测试"
+        },
+        {
+          "node": "element",
+          "tag": "a",
+          "attr": {
+            "href": "http://www.baidu.com",
+            "target": "_blank"
+          },
+          "child": [
+            {
+              "node": "text",
+              "text": "连接"
+            }
+          ]
+        },
+        {
+          "node": "text",
+          "text": "测试"
+        },
+        {
+          "node": "element",
+          "tag": "a",
+          "attr": {
+            "href": "http://www.baidu.com/",
+            "target": "_blank"
+          },
+          "child": [
+            {
+              "node": "text",
+              "text": "连接"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

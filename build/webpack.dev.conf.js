@@ -21,8 +21,8 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
 const compileConfigs = require('../src/web/pages/compile.config.json');
-let htmls = utils.htmls;
-console.log(htmls);
+let htmls = utils.entrys.htmls;
+// console.log(htmls);
 const getHtmlTplDev = ()=>{
   var result = [];
   for(let name in htmls){
@@ -30,7 +30,7 @@ const getHtmlTplDev = ()=>{
     var conf = {
       title : compileConfig.title,
       filename: [name]+'.html',
-      template: htmls[name],
+      template: htmls[name] ? htmls[name] : './src/web/common/layout.pug',
       alwaysWriteToDisk: true,
       inject: true,
       chunks : [name],
@@ -73,7 +73,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   ],
     // },
     historyApiFallback:true,
-    hot: false,
+    hot: true,
     contentBase: path.resolve(__dirname, '../'),
     // contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
@@ -95,7 +95,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
@@ -120,8 +120,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   port: 3000,
     //   proxy: 'http://localhost:9988/'
     // })
-
-    
   ]
 })
 
