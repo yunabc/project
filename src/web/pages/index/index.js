@@ -1,65 +1,11 @@
 import './index.styl'
 import axios from '@js/axios'
 // import wx from 'weixin-js-sdk'
-import $ from 'zepto';
+import $ from '@zepto';
 import fastclick from 'fastclick'
 import BScroll from 'better-scroll'
 import Pop from '@js/lib/window'
 
-let str = `<p>这是一个测试</p >
-<p>测试<strong>加粗</strong>测试<strong>加粗</strong>测试<a href=" " target="_blank">连接</a ></p >
-<p>测试 空格</p >
-<p>测试<a href="http://www.baidu.com" target="_blank">连接</a >测试<a href="http://www.baidu.com/" target="_blank">连接</a ></p >`;
-
-function htmlToJson(str) {
-    let regexp = {
-        checkHtml: /<[^>]+>/g,
-        tagP: /\<p[^>]*>((?:(?!<\/p>)[\s\S])*)\<\/p\>/g,
-        tagA: /\<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)\<\/a\>/g,
-        tagStrong: /\<strong[^>]*>((?:(?!<\/strong>)[\s\S])*)\<\/strong\>/g
-    };
-    let resultP, resultA, resultStrong;
-    let ops = [];
-    while ((resultP = regexp.tagP.exec(str)) != null) {
-        //处理p标签
-        if (!regexp.checkHtml.test(resultP[1])) {
-            ops.push({
-                "insert": resultP[1]
-            });
-        }
-        //处理a标签
-        if (resultP[1].indexOf('</a >') !== -1) {
-            console.log(resultP)
-            while ((resultA = regexp.tagA.exec(resultP[1])) != null) {
-                console.log(resultA)
-                ops.push({
-                    "attributes": {
-                        "link": resultA[1]
-                    },
-                    "insert": resultA[2]
-                });
-            }
-        }
-        //处理strong标签
-        if (resultP[1].indexOf('</strong>') !== -1) {
-            while ((resultStrong = regexp.tagStrong.exec(resultP[1])) != null) {
-                ops.push({
-                    "attributes": {
-                        "bold": true
-                    },
-                    "insert": resultStrong[1]
-                })
-
-            }
-
-        }
-        ops.push({
-            "insert": "\n"
-        });
-    }
-    console.log(ops)
-}
-htmlToJson(str)
 
 // var listenerBackHandler = {  
 //     param: {  

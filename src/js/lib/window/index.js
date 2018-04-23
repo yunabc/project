@@ -1,7 +1,7 @@
 import './window.styl'
 import { isObject } from 'lodash'
 import Dispatch from '../dispatch'
-import $ from 'zepto'
+import $ from '@zepto'
 
 import windowTpl from './template/window.pug'
 console.log(windowTpl);

@@ -1,4 +1,4 @@
-import $ from 'zepto';
+import $ from '@zepto';
 import Pop from '@js/lib/window'
 import './index.styl'
 

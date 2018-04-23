@@ -2,7 +2,7 @@ import '@css/common/common.styl';
 import './brand.styl';
 
 import resize from '@js/lib/resize750'
-import $ from 'zepto'
+import $ from '@zepto'
 
 let car2 = {
 	_events 		: {},									// 自定义事件---this._execEvent('scrollStart');

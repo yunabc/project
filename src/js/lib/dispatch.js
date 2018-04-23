@@ -1,4 +1,4 @@
-import $ from 'zepto'
+import $ from '@zepto'
 class Dispatch{
   constructor(){
     this.boundingBox = null
