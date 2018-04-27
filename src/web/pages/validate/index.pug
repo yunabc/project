@@ -1,0 +1,127 @@
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1')
+    title ZUI -表单验证控件
+  body.demo-bgf2f2f2
+    header.zui-header
+      i.zicon-goback.icon-fanhui(onclick='javascript :history.back(-1);')
+      h1.title 表单验证控件
+    .demo-hd-1.ml10.mr10 验证类型1
+    .zui-mr10.zui-mb10.zui-ml10.demo-bgfff.pd10
+      form.zform.zform-radius#form1 //(action='https://www.wnworld.com')
+        fieldset.zform-fieldset
+          .zform-control
+            .control-field
+              input.field-text(type='password', placeholder='请输入用户名', data-required='true', data-descriptions='username')
+          .zform-control
+            .control-field
+              input#pwd.field-text(type='password', placeholder='请输入密码', data-required='true', data-descriptions='password')
+          .zform-control
+            .control-field
+              input#confirmpwd.field-text(type='password', placeholder='再次输入密码确认', data-required='true', data-descriptions='confirmpassword', data-conditional='confirmpwd')
+          .zform-control
+            .control-field
+              input.field-text(type='text', placeholder='请输入手机号码', data-validate='phone', data-describedby='phone-description')
+          .zform-control
+            .control-field
+              input.field-text(type='text', placeholder='请输入年龄', data-pattern='^[0-9]+$', data-required='true', data-descriptions='age')
+          .zform-control
+            .control-field
+              select.field-select(data-required='true', data-descriptions='address')
+                option(value='', selected='', disabled='') 请选择地址
+                option(value='1') 浙江省
+                option(value='2') 海南省
+          .zform-control
+            label.control-label.control-label-area 个人简介：
+            .control-field
+              textarea.field-area(rows='4', data-required='true', data-descriptions='intro')
+          .zform-control.zform-control-radiocheck
+            label.control-label 兴趣爱好：
+            .control-field
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite')
+                | 篮球
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite')
+                | 足球
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite')
+                | 排球
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite')
+                | 乒乓球
+          .zform-control.zform-control-radiocheck
+            label.control-label 性别：
+            .control-field
+              label
+                input.field-radio.zicon(type='radio', name='sex', data-required='true', data-descriptions='sex')
+                | 男
+              label
+                input.field-radio.zicon(type='radio', name='sex', data-required='true', data-descriptions='sex')
+                | 女
+        input.zbtn.zbtn-primary.zbtn-full.zbtn-lg(type='submit', value='提交')
+    .demo-hd-1.ml10.mr10 验证类型2
+    .zui-mr10.zui-mb10.zui-ml10.demo-bgfff.pd10
+      form.zform.zform-radius#form2(action='https://www.baidu.com')
+        fieldset.zform-fieldset
+          .zform-control
+            .control-field
+              input.field-text(type='password', placeholder='请输入用户名', data-required='true', data-descriptions='username', data-describedby='username-description')
+            #username-description
+          .zform-control
+            .control-field
+              input#pwd2.field-text(type='password', placeholder='请输入密码', data-required='true', data-descriptions='password', data-describedby='password-description', data-conditional='pwd2')
+            #password-description
+          .zform-control
+            .control-field
+              input#confirmpwd2.field-text(type='password', placeholder='再次输入密码确认', data-required='true', data-descriptions='confirmpassword', data-conditional='confirmpwd2', data-describedby='confirmpassword-description')
+            #confirmpassword-description
+          .zform-control
+            .control-field
+              input.field-text(type='text', placeholder='请输入手机号码', data-validate='phone', data-describedby='phone-description')
+            #phone-description
+          .zform-control
+            .control-field
+              input.field-text(type='text', placeholder='请输入年龄', data-pattern='^[0-9]+$', data-required='true', data-descriptions='age', data-describedby='age-description')
+            #age-description
+          .zform-control
+            .control-field
+              select.field-select(data-required='true', data-descriptions='address', data-describedby='address-description', placeholder='请选择省事')
+                option(value='', selected='', disabled='') 请选择地址
+                option(value='1') 浙江省
+                option(value='2') 海南省
+            #address-description
+          .zform-control
+            .control-field
+              textarea.field-area(placeholder='个人简介', rows='4', data-required='true', data-descriptions='intro', data-describedby='intro-description')
+            #intro-description
+          .zform-control.zform-control-radiocheck
+            label.control-label 兴趣爱好：
+            .control-field
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite', data-describedby='favourite-description')
+                | 篮球
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite', data-describedby='favourite-description')
+                | 足球
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite', data-describedby='favourite-description')
+                | 排球
+              label
+                input.field-check.zicon(type='checkbox', name='favourite', data-required='true', data-descriptions='favourite', data-describedby='favourite-description')
+                | 乒乓球
+            #favourite-description
+          .zform-control.zform-control-radiocheck
+            label.control-label 性别：
+            .control-field
+              label
+                input.field-radio.zicon(type='radio', name='sex', data-required='true', data-descriptions='sex', data-describedby='sex-description')
+                | 男
+              label
+                input.field-radio.zicon(type='radio', name='sex', data-required='true', data-descriptions='sex', data-describedby='sex-description')
+                | 女
+            #sex-description
+        input.zbtn.zbtn-primary.zbtn-full.zbtn-lg(type='submit', value='提交')
+    .pl10.pr10.mb20.pb20.align-c
+      a.zbtn.zbtn-primary.zbtn-lg.mb20(href='http://wnworld.com/mobilevalidate', target='_blank') 查看文档

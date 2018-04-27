@@ -1,3 +1,4 @@
+import _ from 'lodash'
 // var html2json =require('html2json').html2json; 
 // var fs =require('fs');
 // let str = `<p>这是一个测试</p >

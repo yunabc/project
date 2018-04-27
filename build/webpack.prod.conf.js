@@ -14,6 +14,8 @@ const compileConfigs = require('../src/web/pages/compile.config.json');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let htmls = utils.entrys.htmls;
+let entrys = utils.entrys.js;
+
 const getHtmlTpl = ()=>{
   var result = [];
   for(let name in htmls){
@@ -23,7 +25,7 @@ const getHtmlTpl = ()=>{
       filename: [name]+'.html',
       template: htmls[name] ? htmls[name] : './src/web/common/layout.pug',
       inject: true,
-      chunks : compileConfig.chunks ? ['manifest'].concat(compileConfig.chunks) : ['manifest','vendor',name],
+      chunks : compileConfig.chunks ? ['manifest'].concat(compileConfig.chunks) : ['manifest',`${name}-vendor`,'common-vendor','common',name],
       chunksSortMode:'manual',//dependency
       minify : {
         removeComments: true,
@@ -40,6 +42,41 @@ const getHtmlTpl = ()=>{
   }
   return result;
 }
+let allVendorName; 
+const vendorArray = () => {
+  var arr=[];
+  var keys = Object.keys(entrys);
+  allVendorName = [];
+  for( let value of keys){
+    let name = `${value}-vendor`;
+    arr.push(
+      new webpack.optimize.CommonsChunkPlugin({
+        name: name,
+        chunks: [value],
+        minChunks (module) {
+          // any required modules inside node_modules are extracted to vendor
+          return (
+            module.resource &&
+            /\.js$/.test(module.resource) &&
+            module.resource.indexOf(
+              path.join(__dirname, '../node_modules')
+            ) === 0
+          )
+        }
+      })
+    )
+    allVendorName.push(name);
+  }
+  return arr;
+  
+}
+
+let vendorArrayPlugins = vendorArray()
+
+
+
+
+
 const env = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -121,24 +158,37 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
+
+    ...vendorArrayPlugins,
     // split vendor js into its own file
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks (module) {
-        // any required modules inside node_modules are extracted to vendor
-        return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, '../node_modules')
-          ) === 0
-        )
-      }
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks (module) {
+    //     // any required modules inside node_modules are extracted to vendor
+    //     return (
+    //       module.resource &&
+    //       /\.js$/.test(module.resource) &&
+    //       module.resource.indexOf(
+    //         path.join(__dirname, '../node_modules')
+    //       ) === 0
+    //     )
+    //   }
+    // }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
     new webpack.optimize.CommonsChunkPlugin({
+      name: 'common-vendor',
+      chunks: allVendorName,
+      minChunks: allVendorName.length > 5 ? Math.floor(allVendorName.length/2) : 3
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      chunks: Object.keys(entrys),
+      minChunks: 2
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
+      // chunks: ['common'],
       minChunks: Infinity
     }),
     // This instance extracts shared chunks from code splitted chunks and bundles them

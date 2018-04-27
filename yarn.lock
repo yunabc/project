@@ -156,6 +156,12 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
+apply-loader@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/apply-loader/download/apply-loader-2.0.0.tgz#9cedf84f12ad89399dc9e7b91f4bb183ecea05b9"
+  dependencies:
+    loader-utils "^1.1.0"
+
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
@@ -3421,6 +3427,18 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.3.x"
 
+html-minifier@^3.5.2:
+  version "3.5.15"
+  resolved "http://registry.npm.taobao.org/html-minifier/download/html-minifier-3.5.15.tgz#f869848d4543cbfd84f26d5514a2a87cbf9a05e0"
+  dependencies:
+    camel-case "3.0.x"
+    clean-css "4.1.x"
+    commander "2.15.x"
+    he "1.1.x"
+    param-case "2.1.x"
+    relateurl "0.2.x"
+    uglify-js "3.3.x"
+
 html-webpack-harddisk-plugin@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/html-webpack-harddisk-plugin/-/html-webpack-harddisk-plugin-0.1.0.tgz#432024961a21ac668fa2b5dfe24629c60b9c58d7"
@@ -3448,6 +3466,15 @@ html-withimg-loader@^0.1.16:
 html2json@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/html2json/download/html2json-1.0.2.tgz#c9d6d202fa65402386c202b345cf51bce80ed1ef"
+
+html2pug@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.taobao.org/html2pug/download/html2pug-2.0.1.tgz#5c2cc71709e92189f985eae7f9757de78a5c49d0"
+  dependencies:
+    get-stdin "^5.0.1"
+    html-minifier "^3.5.2"
+    parse5 "^2.1.5"
+    yargs "^8.0.2"
 
 htmlparser2@~3.3.0:
   version "3.3.0"
@@ -4135,7 +4162,7 @@ loader-runner@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
 
-loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@~0.2.5:
+loader-utils@^0.2.15, loader-utils@^0.2.16:
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   dependencies:
@@ -4859,6 +4886,10 @@ parse5@4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/parse5/download/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
 
+parse5@^2.1.5:
+  version "2.2.3"
+  resolved "http://registry.npm.taobao.org/parse5/download/parse5-2.2.3.tgz#0c4fc41c1000c5e6b93d48b03f8083837834e9f6"
+
 parseqs@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/parseqs/-/parseqs-0.0.5.tgz#d5208a3738e46766e291ba2ea173684921a8b89d"
@@ -5458,11 +5489,11 @@ pug-load@^2.0.11:
     object-assign "^4.1.0"
     pug-walk "^1.1.7"
 
-pug-loader@~2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/pug-loader/-/pug-loader-2.3.0.tgz#b869294413a2218f0a7dd92a953e592283676c10"
+pug-loader@^2.4.0:
+  version "2.4.0"
+  resolved "http://registry.npm.taobao.org/pug-loader/download/pug-loader-2.4.0.tgz#18eebdda045d9c31c2856f1cc3ceb8d3df7ca49a"
   dependencies:
-    loader-utils "~0.2.5"
+    loader-utils "^1.1.0"
     pug-walk "^1.0.0"
     resolve "^1.1.7"
 

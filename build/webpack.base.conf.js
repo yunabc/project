@@ -20,7 +20,7 @@ function resolve (dir) {
 
 
 
-
+console.log(entrys);
 module.exports = {
   entry: entrys,
   context: path.resolve(__dirname, '../'),
@@ -39,6 +39,7 @@ module.exports = {
     alias: {
       // 'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      '@utils': resolve('src/js/utils'),
       '@js': resolve('src/js'),
       '@zepto': resolve('src/js/lib/zepto/zepto.min'),
       '@img': resolve('src/img'),

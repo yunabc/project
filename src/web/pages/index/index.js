@@ -1,12 +1,19 @@
-import './index.styl'
-import axios from '@js/axios'
-// import wx from 'weixin-js-sdk'
+import _ from 'lodash'
 import $ from '@zepto';
-import fastclick from 'fastclick'
 import BScroll from 'better-scroll'
+import './index.styl'
+// import axios from '@js/axios'
+import wx from 'weixin-js-sdk'
+import fastclick from 'fastclick'
 import Pop from '@js/lib/window'
 
 
+var container = document.querySelector('.box-wrap')
+console('adsfasfadf')
+
+container.scrollIntoView(false)
+container.scrollIntoView(false)
+container.scrollIntoView(false)
 // var listenerBackHandler = {  
 //     param: {  
 //         isRun: false, //防止微信返回立即执行popstate事件  
@@ -41,27 +48,27 @@ import Pop from '@js/lib/window'
 
 
 
-console.log('Pop',Pop);
-var popWin = new Pop();
+// console.log('Pop',Pop);
+// var popWin = new Pop();
 
-popWin.confirm({
-  handler4CloseBtn:()=>{alert('you click the close btn')},
-  handler4AlertBtn:()=>{alert('you click the alert btn')},
-  handler4ConfirmBtn:()=>{alert('you click the confirm btn')},
-  handler4CancleBtn:()=>{alert('you click the cancle  btn')},
-  content:'welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! ',
-  title:'alert',
-  yBtnText:'确定',
+// popWin.confirm({
+//   handler4CloseBtn:()=>{alert('you click the close btn')},
+//   handler4AlertBtn:()=>{alert('you click the alert btn')},
+//   handler4ConfirmBtn:()=>{alert('you click the confirm btn')},
+//   handler4CancleBtn:()=>{alert('you click the cancle  btn')},
+//   content:'welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! welcome! ',
+//   title:'alert',
+//   yBtnText:'确定',
 
-}).on('alert',()=>{
-  alert('second alert handler')
-}).on('close',()=>{
-  alert('second close handler')
-}).on('confirm',()=>{
-  alert('second confirm handler')
-}).on('cancle',()=>{
-  alert('second cancle handler')
-})
+// }).on('alert',()=>{
+//   alert('second alert handler')
+// }).on('close',()=>{
+//   alert('second close handler')
+// }).on('confirm',()=>{
+//   alert('second confirm handler')
+// }).on('cancle',()=>{
+//   alert('second cancle handler')
+// })
 
 
 

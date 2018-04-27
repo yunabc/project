@@ -73,7 +73,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   ],
     // },
     historyApiFallback:true,
-    hot: true,
+    // hot: true,
     contentBase: path.resolve(__dirname, '../'),
     // contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
@@ -95,7 +95,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin

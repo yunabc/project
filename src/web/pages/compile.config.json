@@ -56,5 +56,34 @@
     "styles":[],
     "dependencies":[],
     "devDependencies":[]
+  },
+  "validate":{
+    "title":"validate",
+    "cdn":"./static/",
+    "styles":[],
+    "chunks":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "form":{
+    "title":"form",
+    "cdn":"./static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "testKeybord":{
+    "title":"testKeybord",
+    "cdn":"./static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
+  },
+  "testKeybord2":{
+    "title":"testKeybord2",
+    "cdn":"./static/",
+    "styles":[],
+    "dependencies":[],
+    "devDependencies":[]
   }
 }

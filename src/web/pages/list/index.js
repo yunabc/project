@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import listTpl from './list.pug'
 import imgList from './imgList'
 import './index.styl'

@@ -1,6 +1,6 @@
-import '@css/common/common.styl';
-import './brand.styl';
-
+import '@css/common/common.styl'
+import './brand.styl'
+import _ from 'lodash'
 import resize from '@js/lib/resize750'
 import $ from '@zepto'
 

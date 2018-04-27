@@ -1,11 +1,12 @@
+import _ from 'lodash'
 import $ from '@zepto';
 import Pop from '@js/lib/window'
 import './index.styl'
 
 import axios from '@js/axios';
-import _ from "lodash"
 function aaa(){
   console.log(arguments)
+  console.log('this is test window')
 }
 
 aaa({a:1,b:2})

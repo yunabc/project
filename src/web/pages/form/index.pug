@@ -1,0 +1,9 @@
+extends ../../common/layout.pug
+block content
+  - var inputType='password'
+  - var pets = ['猫', '狗']
+  each petName in pets
+    -locals.petName=petName
+    include ../../common/form.pug
+    .bbb #{petName}
+    .aaa ssaaaa
